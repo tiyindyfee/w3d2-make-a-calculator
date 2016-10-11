@@ -122,7 +122,10 @@ for (var i = 0; i < 100; i++) {
 }
 
 for (var i = 0; i < 100; i++) {
-    document.querySelector('.container').innerHTML += `<button class="btn btn-primary btn-lg">Button ${i}</button>`
+    // Only works when you're in a browser viewing this through index.html
+    if (typeof document != 'undefined') {
+        document.querySelector('.container').innerHTML += `<button class="btn btn-primary btn-lg">Button ${i}</button>`
+    }
 }
 
 // Incrementing a number with a loop
